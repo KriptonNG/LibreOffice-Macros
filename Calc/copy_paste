@@ -1,0 +1,25 @@
+Sub Main
+
+		Dim document   as Object
+		Dim dispatcher as Object
+		
+		document   = ThisComponent.CurrentController.Frame
+		dispatcher = createUnoService("com.sun.star.frame.DispatchHelper")
+		
+		dim args1(0) as new com.sun.star.beans.PropertyValue
+		args1(0).Name = "ToPoint"
+		args1(0).Value = "$A$1"
+		
+		dim args2(0) as new com.sun.star.beans.PropertyValue
+		args2(0).Name = "ToPoint"
+		args2(0).Value = "$C$3"
+		
+		dispatcher.executeDispatch(document, ".uno:GoToCell", "", 0, args1())
+		
+		dispatcher.executeDispatch(document, ".uno:Copy", "", 0, Array())
+		
+		dispatcher.executeDispatch(document, ".uno:GoToCell", "", 0, args2())
+		
+		dispatcher.executeDispatch(document, ".uno:Paste", "", 0, Array())
+	
+End Sub
