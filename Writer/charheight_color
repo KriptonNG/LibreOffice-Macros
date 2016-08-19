@@ -1,0 +1,20 @@
+Sub Main
+
+        Dim Doc As Object
+        Dim Cursor As Object
+        Dim Proceed As Boolean
+       
+        Doc = ThisComponent
+        Cursor = Doc.Text.createTextCursor
+        Proceed = Cursor.gotoNextWord(True)
+       
+        do while Proceed
+          Cursor.gotoEndOfWord(True)
+          
+          Cursor.CharHeight = 16
+          Cursor.CharColor = RGB(165,165,165)
+          
+          Proceed = Cursor.gotoNextWord(False)
+        loop
+		
+End Sub

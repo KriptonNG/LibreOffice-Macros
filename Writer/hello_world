@@ -1,0 +1,11 @@
+Sub Main
+
+		Dim Doc as Object
+		Dim Cursor as Object
+		
+		Doc = ThisComponent
+		Cursor = Doc.Text.createTextCursor()
+		
+		Cursor.String = "Hello world! " + chr(13)
+
+End Sub

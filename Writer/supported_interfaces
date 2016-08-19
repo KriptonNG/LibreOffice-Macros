@@ -1,0 +1,19 @@
+Sub Main
+
+	Dim Doc as Object
+	Dim Cursor as Object
+	Dim iBox as Integer
+	
+	iBox = MB_YESNO + MB_DEFBUTTON2 + MB_ICONQUESTION
+	Doc = ThisComponent
+	Cursor = Doc.Text.createTextCursor()
+	
+	
+	iBox = MB_YESNO + MB_DEFBUTTON2 + MB_ICONQUESTION
+	
+	IF MsgBox ("Do you want to show all supported services for this component?",292,"Interfaces" iBox) = IDYES Then
+		Cursor.String = ThisComponent.Dbg_SupportedInterfaces	
+	End IF
+	
+
+End Sub

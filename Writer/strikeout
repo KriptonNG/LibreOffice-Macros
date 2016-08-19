@@ -1,0 +1,24 @@
+Sub Main
+
+		Dim Doc As Object
+        Dim Cursor As Object
+        Dim Proceed As Boolean
+       
+        Doc = ThisComponent
+        Cursor = Doc.Text.createTextCursor
+        Proceed = Cursor.gotoNextWord(True)
+       
+        do while Proceed
+          Cursor.gotoEndOfWord(True)
+          
+          If Cursor.CharStrikeout = com.sun.star.awt.FontStrikeout.SINGLE  Then
+		  	Cursor.CharStrikeout = com.sun.star.awt.FontStrikeout.NONE
+		  Else
+		  	Cursor.CharStrikeout = com.sun.star.awt.FontStrikeout.SINGLE
+		  End If
+		  
+          Proceed = Cursor.gotoNextWord(False)
+         
+		loop
+
+End Sub

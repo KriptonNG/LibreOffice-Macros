@@ -1,0 +1,24 @@
+Sub Main
+
+        Dim Doc As Object
+        Dim Cursor As Object
+        Dim Proceed As Boolean
+       
+        Doc = ThisComponent
+        Cursor = Doc.Text.createTextCursor
+        Proceed = Cursor.gotoNextWord(True)
+       
+        do while Proceed
+          Cursor.gotoEndOfWord(True)
+
+          If Cursor.CharUnderline = com.sun.star.awt.FontUnderline.SINGLE  Then
+		  	     Cursor.CharUnderline = com.sun.star.awt.FontUnderline.NONE
+		      Else
+		  	     Cursor.CharUnderline = com.sun.star.awt.FontUnderline.SINGLE
+		      End If
+
+          Proceed = Cursor.gotoNextWord(False)
+
+        loop
+
+End Sub

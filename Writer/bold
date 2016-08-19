@@ -1,0 +1,24 @@
+Sub Main
+
+        Dim Doc As Object
+        Dim Cursor As Object
+        Dim Proceed As Boolean
+       
+        Doc = ThisComponent
+        Cursor = Doc.Text.createTextCursor
+        Proceed = Cursor.gotoNextWord(True)
+       
+        do while Proceed
+          Cursor.gotoEndOfWord(True)
+
+          If Cursor.CharWeight = com.sun.star.awt.FontWeight.BOLD  Then
+		  	     Cursor.CharWeight = com.sun.star.awt.FontWeight.THIN
+		      Else
+		  	     Cursor.CharWeight = com.sun.star.awt.FontWeight.BOLD
+		      End If
+
+          Proceed = Cursor.gotoNextWord(False)
+
+        loop
+
+End Sub
