@@ -1,0 +1,10 @@
+Sub Main
+
+	Dim document as Object
+	document = ThisComponent
+	
+	sheet = document.Sheets(0)
+	MsgBox(sheet.getCellByPosition(0, 0).String)
+	MsgBox(sheet.getCellByPosition(0, 1).String)
+
+End Sub

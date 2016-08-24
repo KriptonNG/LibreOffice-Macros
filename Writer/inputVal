@@ -1,0 +1,13 @@
+Sub Main
+
+		Dim Doc as Object
+		Dim Cursor as Object
+
+		Doc = ThisComponent
+		Cursor = Doc.Text.createTextCursor()
+
+		InputVal = InputBox("Please enter value:", "Test")
+
+		cursor.String = InputVal + chr(13)
+
+End Sub

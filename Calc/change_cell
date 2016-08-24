@@ -1,0 +1,11 @@
+Sub Main
+
+	Dim document as Object
+	document = ThisComponent
+
+	sheet = document.Sheets(0)
+	sheet.getCellByPosition(0,0).String = "Hey!"
+	sheet.getCellByPosition(0,1).String = "Feyza"
+	MsgBox("Done")
+
+End Sub

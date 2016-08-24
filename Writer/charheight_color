@@ -11,8 +11,12 @@ Sub Main
         do while Proceed
           Cursor.gotoEndOfWord(True)
           
+          Cursor.ParaStyleName = "Text Body" ' Quotations, Default Style, Text Body etc.
           Cursor.CharHeight = 16
           Cursor.CharColor = RGB(165,165,165)
+          Cursor.CharBackColor = RGB(255,0,0)
+          Cursor.CharFontName = "Verdana"
+
           
           Proceed = Cursor.gotoNextWord(False)
         loop
